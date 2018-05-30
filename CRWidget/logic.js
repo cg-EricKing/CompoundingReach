@@ -4,9 +4,14 @@
 // Example => if 90 days are entered
     // for(var i = 2; i <= campaignLength; i++) {
     //  add reachDayTwo to reach and save
-    // compute impressions reach * 10 * 30.4
+    // compute impressions reach * 10 * 30.4 - save and push to array
     //}
+// Create a front-end view with the data from the array calcualtions
+    // View will show monthly output based on the lifetime of the campaign (90, 180,365) - show by month or quarterly
 
+// Code in a reset button to allow for a user to reset the data and enter new variables and get different results
+
+// Add in validation for the form to make sure values are entered as intended
 
 $(document).ready(function() {
     console.log("Script Linked!");
@@ -47,13 +52,35 @@ $(document).ready(function() {
             console.log(impressionArray);
 
             // Front-End View with Data Calculations
+            $("#first-month").text(impressionArray[31]);
+            $("#third-month").text(impressionArray[91]);
+            $("#sixth-month").text(impressionArray[181]);
+            $("#ninth-month").text(impressionArray[271]);
+            $("#final-month").text(impressionArray[335]);
 
-            // Reset Button
-
-            // Validation Function
         });
         
-
+    // Reset Button
+    // Need to reset arrays and <p> tags with data
+    function reset() {
+        reachArray = [];
+        impressionArray = [];
+        console.log("Arrays emptied - ");
+        console.log(reachArray);
+        console.log(impressionArray);
+        $("#first-month").text("");
+        $("#third-month").text("");
+        $("#sixth-month").text("");
+        $("#ninth-month").text("");
+        $("#final-month").text("");
+    
+    }
+    // On-click event for the reset button
+    $("#reset").on("click", function() {
+        console.log("Reset button clicked");
+        reset();
+    });
+    // Validation Function
 
     
 
