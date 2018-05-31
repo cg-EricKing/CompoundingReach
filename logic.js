@@ -58,6 +58,11 @@ $(document).ready(function() {
             $("#ninth-month").text(impressionArray[271]).addClass("text-primary font-weight-bold");
             $("#final-month").text(impressionArray[335]).addClass("text-primary font-weight-bold");
 
+            $("#first-reach").text(impressionArray[31]).addClass("text-info font-weight-bold");
+            $("#third-reach").text(impressionArray[91]).addClass("text-info font-weight-bold");
+            $("#sixth-reach").text(impressionArray[181]).addClass("text-info font-weight-bold");
+            $("#ninth-reach").text(impressionArray[271]).addClass("text-info font-weight-bold");
+            $("#final-reach").text(impressionArray[335]).addClass("text-info font-weight-bold");
         });
         
     // Reset Button
@@ -73,6 +78,11 @@ $(document).ready(function() {
         $("#sixth-month").text("");
         $("#ninth-month").text("");
         $("#final-month").text("");
+        $("#first-reach").text("");
+        $("#third-reach").text("");
+        $("#sixth-reach").text("");
+        $("#ninth-reach").text("");
+        $("#final-reach").text("");
     
     }
     // On-click event for the reset button
