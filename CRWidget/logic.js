@@ -52,11 +52,11 @@ $(document).ready(function() {
             console.log(impressionArray);
 
             // Front-End View with Data Calculations
-            $("#first-month").text(impressionArray[31]);
-            $("#third-month").text(impressionArray[91]);
-            $("#sixth-month").text(impressionArray[181]);
-            $("#ninth-month").text(impressionArray[271]);
-            $("#final-month").text(impressionArray[335]);
+            $("#first-month").text(impressionArray[31]).addClass("text-primary font-weight-bold");
+            $("#third-month").text(impressionArray[91]).addClass("text-primary font-weight-bold");
+            $("#sixth-month").text(impressionArray[181]).addClass("text-primary font-weight-bold");
+            $("#ninth-month").text(impressionArray[271]).addClass("text-primary font-weight-bold");
+            $("#final-month").text(impressionArray[335]).addClass("text-primary font-weight-bold");
 
         });
         
@@ -81,7 +81,11 @@ $(document).ready(function() {
         reset();
     });
     // Validation Function
+    function validate() {
+        // validate input fields
 
+        // validate input message to say campaign length variables
+    }
     
 
 

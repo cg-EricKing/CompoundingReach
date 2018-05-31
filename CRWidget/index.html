@@ -6,46 +6,66 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Compounding Reach Widget</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script
 			  src="https://code.jquery.com/jquery-3.3.1.min.js"
 			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
               crossorigin="anonymous">
     </script>
     <script src="logic.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Compounding Reach Calculator</h1>
-
-
-    <form name="reachform" id="crform">
-        Daily Reach: <br>
-        <input type="text" name="monthlyreach" id="reach"> <br>
-        Campaign Length: <br>
-        <input type="text" name="campaignlength" id="campaignlength"> <br>
-
-
-        <input type="submit" value="Submit" id="submitbutton">
-    </form>
+    <div class="container">
+        <h1 class="display-3">Compounding Reach Calculator</h1>
+        <hr>
+        <form name="reachform" id="crform" class="form-group">
+            Daily Reach: <br>
+            <input type="text" name="monthlyreach" id="reach" class="form-control"> <br>
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select class="form-control form-control-lg" id="campaignlength">
+                <option>90</option>
+                <option>180</option>
+                <option>365</option>
+            </select>
+            <br>
+            <button type="submit" value="Submit" id="submitbutton" class="btn btn-primary">Submit</button>
+        </form>
+        <button id="reset" class="btn btn-info">Reset</button>
+        
     
-
-    <h1>Monthly Estimations: </h1>
-
-    <h3>First Month: </h3>
-    <p id="first-month" class="estimate-value"></p>
-
-    <h3>Third Month: </h3>
-    <p id="third-month" class="estimate-value"></p>
-    
-    <h3>Sixth Month: </h3>
-    <p id="sixth-month" class="estimate-value"></p>
-    
-    <h3>Ninth Month: </h3>
-    <p id="ninth-month" class="estimate-value"></p>
-
-    <h3>Final Month: </h3>
-    <p id="final-month" class="estimate-value"></p>
-    
-    <button id="reset">Reset</button>
-
+        <h1 class="display-3">Monthly Impression Estimations</h1>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <h3 class="display-4">First Month</h3>
+                <p id="first-month" class="estimate-value"></p>
+            </div>
+            <div class="col">
+                <h3 class="display-4">Third Month</h3>
+                <p id="third-month" class="estimate-value"></p>
+            </div>
+            <div class="col">
+                <h3 class="display-4">Sixth Month</h3>
+                <p id="sixth-month" class="estimate-value"></p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h3 class="display-4">Ninth Month</h3>
+                <p id="ninth-month" class="estimate-value"></p>
+            </div>
+            <div class="col">
+                <h3 class="display-4">Final Month</h3>
+                <p id="final-month" class="estimate-value"></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
