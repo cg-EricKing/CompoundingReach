@@ -11,6 +11,8 @@
 
 // Code in a reset button to allow for a user to reset the data and enter new variables and get different results
 
+// Daily reach translated to how many times per day do you want 1 person to see your ad.
+
 // Add in validation for the form to make sure values are entered as intended
 
 $(document).ready(function() {
@@ -37,32 +39,42 @@ $(document).ready(function() {
 
             var reachArray = [reachDayOne, reachDayTwo];
             var impressionArray = [dayOneImpressions, dayTwoImpressions];
+            var budgetArray = [0, 1];
             // loop
             for(var i = 2; i < campaignLength; i++) {
                 var reachGoingForward = reachDayTwo += dailyReach;
                 console.log("New Reach Total: " + reachGoingForward);
                 var totalImpressions = reachGoingForward * 10 * 30.4;
                 console.log("Impressions Compounded: " + totalImpressions);
+                var budget = (totalImpressions / 1000) * 1.25;
                 reachArray.push(reachGoingForward);
                 impressionArray.push(totalImpressions);
+                budgetArray.push(budget);
             }
 
             // Full Array of data for reach and impressions
             console.log(reachArray);
             console.log(impressionArray);
+            console.log(budgetArray);
 
             // Front-End View with Data Calculations
             $("#first-month").text(impressionArray[31]).addClass("text-primary font-weight-bold");
             $("#third-month").text(impressionArray[91]).addClass("text-primary font-weight-bold");
             $("#sixth-month").text(impressionArray[181]).addClass("text-primary font-weight-bold");
             $("#ninth-month").text(impressionArray[271]).addClass("text-primary font-weight-bold");
-            $("#final-month").text(impressionArray[335]).addClass("text-primary font-weight-bold");
+            $("#final-month").text(impressionArray[364]).addClass("text-primary font-weight-bold");
 
             $("#first-reach").text(reachArray[31]).addClass("text-info font-weight-bold");
             $("#third-reach").text(reachArray[91]).addClass("text-info font-weight-bold");
             $("#sixth-reach").text(reachArray[181]).addClass("text-info font-weight-bold");
             $("#ninth-reach").text(reachArray[271]).addClass("text-info font-weight-bold");
-            $("#final-reach").text(reachArray[335]).addClass("text-info font-weight-bold");
+            $("#final-reach").text(reachArray[364]).addClass("text-info font-weight-bold");
+
+            $("#budget-30").text(budgetArray[31]).addClass("text-danger font-weight-bold");
+            $("#budget-90").text(budgetArray[91]).addClass("text-danger font-weight-bold");
+            $("#budget-180").text(budgetArray[181]).addClass("text-danger font-weight-bold");
+            $("#budget-270").text(budgetArray[271]).addClass("text-danger font-weight-bold");
+            $("#budget-365").text(budgetArray[364]).addClass("text-danger font-weight-bold");
         });
         
     // Reset Button
