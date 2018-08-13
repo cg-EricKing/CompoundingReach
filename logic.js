@@ -31,10 +31,10 @@ $(document).ready(function() {
             console.log("Initial Reach: " + dailyReach);
             console.log("Number of days to calculate: " + campaignLength);
             var reachDayOne = dailyReach;
-            var dayOneImpressions = reachDayOne * 10 * 30.4;
+            var dayOneImpressions = reachDayOne * 10;
             console.log("Day One: " + reachDayOne + " - Impressions: " + dayOneImpressions);
             var reachDayTwo = reachDayOne + dailyReach;
-            var dayTwoImpressions = reachDayTwo * 10 * 30.4;
+            var dayTwoImpressions = reachDayTwo * 10;
             console.log("Reach Day Two: "+ reachDayTwo+ " - Impressions: " + dayTwoImpressions);
 
             var reachArray = [reachDayOne, reachDayTwo];
@@ -44,7 +44,7 @@ $(document).ready(function() {
             for(var i = 2; i < campaignLength; i++) {
                 var reachGoingForward = reachDayTwo += dailyReach;
                 console.log("New Reach Total: " + reachGoingForward);
-                var totalImpressions = reachGoingForward * 10 * 30.4;
+                var totalImpressions = reachGoingForward * 10;
                 console.log("Impressions Compounded: " + totalImpressions);
                 var budget = (totalImpressions / 1000) * 1.25;
                 reachArray.push(reachGoingForward);
@@ -58,22 +58,22 @@ $(document).ready(function() {
             console.log(budgetArray);
 
             // Front-End View with Data Calculations
-            $("#first-month").text(impressionArray[31]).addClass("text-primary font-weight-bold");
-            $("#third-month").text(impressionArray[91]).addClass("text-primary font-weight-bold");
-            $("#sixth-month").text(impressionArray[181]).addClass("text-primary font-weight-bold");
-            $("#ninth-month").text(impressionArray[271]).addClass("text-primary font-weight-bold");
+            $("#first-month").text(impressionArray[30]).addClass("text-primary font-weight-bold");
+            $("#third-month").text(impressionArray[90]).addClass("text-primary font-weight-bold");
+            $("#sixth-month").text(impressionArray[180]).addClass("text-primary font-weight-bold");
+            $("#ninth-month").text(impressionArray[270]).addClass("text-primary font-weight-bold");
             $("#final-month").text(impressionArray[364]).addClass("text-primary font-weight-bold");
 
-            $("#first-reach").text(reachArray[31]).addClass("text-info font-weight-bold");
-            $("#third-reach").text(reachArray[91]).addClass("text-info font-weight-bold");
-            $("#sixth-reach").text(reachArray[181]).addClass("text-info font-weight-bold");
-            $("#ninth-reach").text(reachArray[271]).addClass("text-info font-weight-bold");
+            $("#first-reach").text(reachArray[30]).addClass("text-info font-weight-bold");
+            $("#third-reach").text(reachArray[90]).addClass("text-info font-weight-bold");
+            $("#sixth-reach").text(reachArray[180]).addClass("text-info font-weight-bold");
+            $("#ninth-reach").text(reachArray[270]).addClass("text-info font-weight-bold");
             $("#final-reach").text(reachArray[364]).addClass("text-info font-weight-bold");
 
-            $("#budget-30").text(budgetArray[31]).addClass("text-danger font-weight-bold");
-            $("#budget-90").text(budgetArray[91]).addClass("text-danger font-weight-bold");
-            $("#budget-180").text(budgetArray[181]).addClass("text-danger font-weight-bold");
-            $("#budget-270").text(budgetArray[271]).addClass("text-danger font-weight-bold");
+            $("#budget-30").text(budgetArray[30]).addClass("text-danger font-weight-bold");
+            $("#budget-90").text(budgetArray[90]).addClass("text-danger font-weight-bold");
+            $("#budget-180").text(budgetArray[180]).addClass("text-danger font-weight-bold");
+            $("#budget-270").text(budgetArray[270]).addClass("text-danger font-weight-bold");
             $("#budget-365").text(budgetArray[364]).addClass("text-danger font-weight-bold");
         });
         
