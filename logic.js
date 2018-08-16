@@ -31,10 +31,10 @@ $(document).ready(function() {
             console.log("Initial Reach: " + dailyReach);
             console.log("Number of days to calculate: " + campaignLength);
             var reachDayOne = dailyReach;
-            var dayOneImpressions = reachDayOne * 10;
+            var dayOneImpressions = reachDayOne * 10 * 30.4;
             console.log("Day One: " + reachDayOne + " - Impressions: " + dayOneImpressions);
             var reachDayTwo = reachDayOne + dailyReach;
-            var dayTwoImpressions = reachDayTwo * 10;
+            var dayTwoImpressions = reachDayTwo * 10 * 30.4;
             console.log("Reach Day Two: "+ reachDayTwo+ " - Impressions: " + dayTwoImpressions);
 
             var reachArray = [reachDayOne, reachDayTwo];
@@ -44,7 +44,7 @@ $(document).ready(function() {
             for(var i = 2; i < campaignLength; i++) {
                 var reachGoingForward = reachDayTwo += dailyReach;
                 console.log("New Reach Total: " + reachGoingForward);
-                var totalImpressions = reachGoingForward * 10;
+                var totalImpressions = reachGoingForward * 10 * 30.4;
                 console.log("Impressions Compounded: " + totalImpressions);
                 var budget = (totalImpressions / 1000) * 1.25;
                 reachArray.push(reachGoingForward);
