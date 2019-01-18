@@ -22,66 +22,61 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="display-4">Compounding Reach Calculator</h1>
+        <h1 class="header">Compounding Reach Calculator</h1>
         <hr>
-        <form name="reachform" id="crform" class="form-group">
-            Daily Reach: <br>
-            <input type="text" name="monthlyreach" id="reach" class="form-control"> <br>
-            <label for="exampleFormControlSelect1">Campaign Length</label>
-            <select class="form-control form-control-lg" id="campaignlength">
-                <option>90</option>
-                <option>180</option>
-                <option>365</option>
-            </select>
-            <br>
-            <button type="submit" value="Submit" id="submitbutton" class="btn btn-primary">Submit</button>
-        </form>
-        <button id="reset" class="btn btn-info">Reset</button>
-        
-    
-        <h1 class="display-4">Monthly Impression and Reach Estimations</h1>
-        <p>Impressions will be followed by reach after calculating.</p>
+        <div class="container-fluid">
+            <form name="reachform" id="crform" class="form-group">
+                        <label for="monthlyreach">Daily Reach</label>
+                        <input type="text" name="monthlyreach" id="reach" class="form-control">
+                        <label for="campaignlength">Campaign Length</label>
+                        <select class="form-control select" id="campaignlength">
+                            <option>90</option>
+                            <option>180</option>
+                            <option>365</option>
+                        </select>
+                <button type="submit" value="Submit" id="submitbutton" class="button">Submit</button>
+            </form>
+        </div>
+   
+        <h1 class="header">Monthly Impression and Reach Estimations</h1>
+        <p>Impressions will be followed by reach and a budget estimation.</p>
         <hr>
         <div class="row">
-            <div class="col">
-                <h3 class="display-4">30 Days</h3>
+            <div class="col-sm">
+                <h3 class="header">30 Days</h3>
                 <p id="first-month" class="estimate-value"></p>
                 <p id="first-reach" class="reach-value"></p>
-                <h3 class="display-4">Budget Estimation</h3>
                 <p id="budget-30" class="budget-value"></p>
             </div>
-            <div class="col">
-                <h3 class="display-4">90 Days</h3>
+            <div class="col-sm">
+                <h3 class="header">90 Days</h3>
                 <p id="third-month" class="estimate-value"></p>
                 <p id="third-reach" class="reach-value"></p>
-                <h3 class="display-4">Budget Estimation</h3>
                 <p id="budget-90" class="budget-value"></p>
             </div>
-            <div class="col">
-                <h3 class="display-4">180 Days</h3>
+            <div class="col-sm">
+                <h3 class="header">180 Days</h3>
                 <p id="sixth-month" class="estimate-value"></p>
                 <p id="sixth-reach" class="reach-value"></p>
-                <h3 class="display-4">Budget Estimation</h3>
                 <p id="budget-180" class="budget-value"></p>
             </div>
         </div>
         <br>
         <div class="row">
-            <div class="col">
-                <h3 class="display-4">270 Days</h3>
+            <div class="col-sm">
+                <h3 class="header">270 Days</h3>
                 <p id="ninth-month" class="estimate-value"></p>
                 <p id="ninth-reach" class="reach-value"></p>
-                <h3 class="display-4">Budget Estimation</h3>
                 <p id="budget-270" class="budget-value"></p>
             </div>
-            <div class="col">
-                <h3 class="display-4">365 Days</h3>
+            <div class="col-sm">
+                <h3 class="header">365 Days</h3>
                 <p id="final-month" class="estimate-value"></p>
                 <p id="final-reach" class="reach-value"></p>
-                <h3 class="display-4">Budget Estimation</h3>
                 <p id="budget-365" class="budget-value"></p>
             </div>
         </div>
+        <button id="reset" class="reset-button">Reset </button>
     </div>
 </body>
 </html>

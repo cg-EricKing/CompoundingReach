@@ -82,9 +82,11 @@ $(document).ready(function() {
     function reset() {
         reachArray = [];
         impressionArray = [];
+        budgetArray = [];
         console.log("Arrays emptied - ");
         console.log(reachArray);
         console.log(impressionArray);
+        console.log(budgetArray);
         $("#first-month").text("");
         $("#third-month").text("");
         $("#sixth-month").text("");
@@ -95,6 +97,11 @@ $(document).ready(function() {
         $("#sixth-reach").text("");
         $("#ninth-reach").text("");
         $("#final-reach").text("");
+        $("#budget-30").text("");
+        $("#budget-90").text("");
+        $("#budget-180").text("");
+        $("#budget-270").text("");
+        $("#budget-365").text("");
     
     }
     // On-click event for the reset button
