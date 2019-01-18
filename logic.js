@@ -56,25 +56,43 @@ $(document).ready(function() {
             console.log(reachArray);
             console.log(impressionArray);
             console.log(budgetArray);
-
             // Front-End View with Data Calculations
-            $("#first-month").text(impressionArray[30]).addClass("text-primary font-weight-bold");
-            $("#third-month").text(impressionArray[90]).addClass("text-primary font-weight-bold");
-            $("#sixth-month").text(impressionArray[180]).addClass("text-primary font-weight-bold");
-            $("#ninth-month").text(impressionArray[270]).addClass("text-primary font-weight-bold");
-            $("#final-month").text(impressionArray[364]).addClass("text-primary font-weight-bold");
+            if(campaignLength <= 30) {
+                console.log("campaign length = 30");
+                $("#first-month").text(impressionArray[29]).addClass("text-primary font-weight-bold");
+                $("#first-reach").text(reachArray[29]).addClass("text-info font-weight-bold");
+                $("#budget-30").text(budgetArray[29]).addClass("text-danger font-weight-bold");
+            } else if (campaignLength <= 180) {
+                console.log("campaign length = 180");
+                $("#first-month").text(impressionArray[29]).addClass("text-primary font-weight-bold");
+                $("#first-reach").text(reachArray[29]).addClass("text-info font-weight-bold");
+                $("#budget-30").text(budgetArray[29]).addClass("text-danger font-weight-bold");
 
-            $("#first-reach").text(reachArray[30]).addClass("text-info font-weight-bold");
-            $("#third-reach").text(reachArray[90]).addClass("text-info font-weight-bold");
-            $("#sixth-reach").text(reachArray[180]).addClass("text-info font-weight-bold");
-            $("#ninth-reach").text(reachArray[270]).addClass("text-info font-weight-bold");
-            $("#final-reach").text(reachArray[364]).addClass("text-info font-weight-bold");
+                $("#third-month").text(impressionArray[89]).addClass("text-primary font-weight-bold");
+                $("#sixth-month").text(impressionArray[179]).addClass("text-primary font-weight-bold");
+                $("#third-reach").text(reachArray[89]).addClass("text-info font-weight-bold");
+                $("#sixth-reach").text(reachArray[179]).addClass("text-info font-weight-bold");
+                $("#budget-90").text(budgetArray[89]).addClass("text-danger font-weight-bold");
+                $("#budget-180").text(budgetArray[179]).addClass("text-danger font-weight-bold");
+            } else {
+                console.log("campaign length = 365");
+                $("#first-month").text(impressionArray[29]).addClass("text-primary font-weight-bold");
+                $("#first-reach").text(reachArray[29]).addClass("text-info font-weight-bold");
+                $("#budget-30").text(budgetArray[29]).addClass("text-danger font-weight-bold");
 
-            $("#budget-30").text(budgetArray[30]).addClass("text-danger font-weight-bold");
-            $("#budget-90").text(budgetArray[90]).addClass("text-danger font-weight-bold");
-            $("#budget-180").text(budgetArray[180]).addClass("text-danger font-weight-bold");
-            $("#budget-270").text(budgetArray[270]).addClass("text-danger font-weight-bold");
-            $("#budget-365").text(budgetArray[364]).addClass("text-danger font-weight-bold");
+                $("#third-month").text(impressionArray[89]).addClass("text-primary font-weight-bold");
+                $("#sixth-month").text(impressionArray[179]).addClass("text-primary font-weight-bold");
+                $("#third-reach").text(reachArray[89]).addClass("text-info font-weight-bold");
+                $("#sixth-reach").text(reachArray[179]).addClass("text-info font-weight-bold");
+                $("#budget-90").text(budgetArray[89]).addClass("text-danger font-weight-bold");
+                $("#budget-180").text(budgetArray[179]).addClass("text-danger font-weight-bold");
+                $("#ninth-month").text(impressionArray[269]).addClass("text-primary font-weight-bold");
+                $("#final-month").text(impressionArray[364]).addClass("text-primary font-weight-bold");
+                $("#ninth-reach").text(reachArray[269]).addClass("text-info font-weight-bold");
+                $("#final-reach").text(reachArray[364]).addClass("text-info font-weight-bold");
+                $("#budget-270").text(budgetArray[269]).addClass("text-danger font-weight-bold");
+                $("#budget-365").text(budgetArray[364]).addClass("text-danger font-weight-bold");
+            }
         });
         
     // Reset Button
