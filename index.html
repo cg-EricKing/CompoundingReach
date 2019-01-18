@@ -26,14 +26,21 @@
         <hr>
         <div class="container-fluid">
             <form name="reachform" id="crform" class="form-group">
+                <div class="row">
+                    <div class="col-md">
                         <label for="monthlyreach">Daily Reach</label>
                         <input type="text" name="monthlyreach" id="reach" class="form-control">
+                    </div>
+                    <div class="col-md">
                         <label for="campaignlength">Campaign Length</label>
                         <select class="form-control select" id="campaignlength">
                             <option>90</option>
                             <option>180</option>
                             <option>365</option>
                         </select>
+                    </div>
+                </div>
+                        
                 <button type="submit" value="Submit" id="submitbutton" class="button">Submit</button>
             </form>
         </div>
@@ -75,6 +82,7 @@
                 <p id="final-reach" class="reach-value"></p>
                 <p id="budget-365" class="budget-value"></p>
             </div>
+            <div class="col-sm"></div>
         </div>
         <button id="reset" class="reset-button">Reset </button>
     </div>
