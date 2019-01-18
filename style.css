@@ -16,7 +16,7 @@ label {
 
 .button {
     box-shadow: 0 0 0 1px #21BA45;
-    margin: 25px 45px;
+    margin: 25px 0;
     padding: 5px 10px;
     color: #21BA45;
     background-color: #FFF;
@@ -31,7 +31,7 @@ label {
 
 .reset-button {
     box-shadow: 0 0 0 1px #2185D0;
-    margin: 25px 45px;
+    margin: 25px 0;
     padding: 5px 10px;
     color: #2185D0;
     background-color: #FFF;
