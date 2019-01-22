@@ -94,6 +94,25 @@ $(document).ready(function() {
                 $("#budget-365").text(budgetArray[364]).addClass("text-danger font-weight-bold");
             }
         });
+
+        $("#audience-form").submit(function() {
+            event.preventDefault();
+            console.log("Audience form button clicked.");
+
+            var audienceReach = parseInt($("#audiencereachnumber").val());
+
+            var impressionCalculation = audienceReach / 3 * 10 * 30.4;
+
+            $("#impressions").text(impressionCalculation).addClass("text-primary");
+        });
+
+        function resetAudience() {
+            $("#impressions").text(" ");
+        }
+
+        $("#reset-impressions").on("click", function() {
+            resetAudience();
+        })
         
     // Reset Button
     // Need to reset arrays and <p> tags with data
