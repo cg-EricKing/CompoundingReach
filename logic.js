@@ -40,6 +40,7 @@ $(document).ready(function() {
             var reachArray = [reachDayOne, reachDayTwo];
             var impressionArray = [dayOneImpressions, dayTwoImpressions];
             var budgetArray = [0, 1];
+            $(".alert").alert();
             // loop
             for(var i = 2; i < campaignLength; i++) {
                 var reachGoingForward = reachDayTwo += dailyReach;
@@ -59,11 +60,17 @@ $(document).ready(function() {
             // Front-End View with Data Calculations
             if(campaignLength <= 30) {
                 console.log("campaign length = 30");
+                $(".header-30").addClass("show");
+                $(".alert").addClass("show");
                 $("#first-month").text(impressionArray[29]).addClass("text-primary font-weight-bold");
                 $("#first-reach").text(reachArray[29]).addClass("text-info font-weight-bold");
                 $("#budget-30").text(budgetArray[29]).addClass("text-danger font-weight-bold");
             } else if (campaignLength <= 180) {
                 console.log("campaign length = 180");
+                $(".header-30").addClass("show");
+                $(".header-90").addClass("show");
+                $(".header-180").addClass("show");
+                $(".alert").addClass("show");
                 $("#first-month").text(impressionArray[29]).addClass("text-primary font-weight-bold");
                 $("#first-reach").text(reachArray[29]).addClass("text-info font-weight-bold");
                 $("#budget-30").text(budgetArray[29]).addClass("text-danger font-weight-bold");
@@ -76,6 +83,12 @@ $(document).ready(function() {
                 $("#budget-180").text(budgetArray[179]).addClass("text-danger font-weight-bold");
             } else {
                 console.log("campaign length = 365");
+                $(".header-30").addClass("show");
+                $(".header-90").addClass("show");
+                $(".header-180").addClass("show");
+                $(".header-270").addClass("show");
+                $(".header-365").addClass("show");
+                $(".alert").addClass("show");
                 $("#first-month").text(impressionArray[29]).addClass("text-primary font-weight-bold");
                 $("#first-reach").text(reachArray[29]).addClass("text-info font-weight-bold");
                 $("#budget-30").text(budgetArray[29]).addClass("text-danger font-weight-bold");
@@ -102,12 +115,14 @@ $(document).ready(function() {
             var audienceReach = parseInt($("#audiencereachnumber").val());
 
             var impressionCalculation = audienceReach / 3 * 10 * 30.4;
+            $(".alert-2").addClass("show");
 
-            $("#impressions").text(impressionCalculation).addClass("text-primary");
+            $("#impressions").text(impressionCalculation).addClass("text-primary font-weight-bold");
         });
 
         function resetAudience() {
             $("#impressions").text(" ");
+            $(".alert-2").removeClass("show").addClass("hide");
         }
 
         $("#reset-impressions").on("click", function() {
@@ -139,6 +154,12 @@ $(document).ready(function() {
         $("#budget-180").text("");
         $("#budget-270").text("");
         $("#budget-365").text("");
+        $(".header-30").removeClass("show").addClass("hide");
+        $(".header-90").removeClass("show").addClass("hide");
+        $(".header-180").removeClass("show").addClass("hide");
+        $(".header-270").removeClass("show").addClass("hide");
+        $(".header-365").removeClass("show").addClass("hide");
+        $(".alert").removeClass("show").addClass("hide");
     
     }
     // On-click event for the reset button

@@ -43,3 +43,11 @@ label {
     text-decoration: none;
     border-radius: 2px;
 }
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
